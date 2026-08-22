@@ -1,0 +1,31 @@
+version: 0.0.3
+type: plugin
+author: KouuShin
+name: image-tiler
+repo: https://github.com/KouuShin/image-tiler
+label:
+  en_US: Image Tiler
+  zh_Hans: 图片切片
+description:
+  en_US: Splits JPEG and PNG images into overlapping JPEG tiles and returns a traceable manifest.
+  zh_Hans: 将 JPEG 和 PNG 图片切分为带重叠的 JPEG 局部图，并输出可追溯的清单。
+created_at: "2026-08-21T00:00:00Z"
+icon: icon.svg
+resource:
+  memory: 1073741824
+permission:
+  tool:
+    enabled: true
+plugins:
+  tools:
+    - provider/image_tiler.yaml
+meta:
+  version: 0.0.3
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+privacy: PRIVACY.md
