@@ -1,0 +1,17 @@
+identity:
+  author: KouuShin
+  name: image_tiler
+  label:
+    en_US: Image Tiler
+    zh_Hans: 图片切片
+  description:
+    en_US: Creates an overview and overlapping local tiles for every input image.
+    zh_Hans: 为每张输入图片创建整图 overview 和带重叠的局部切片。
+  icon: icon.svg
+  tags:
+    - utilities
+tools:
+  - tools/tile_images.yaml
+extra:
+  python:
+    source: provider/image_tiler.py
