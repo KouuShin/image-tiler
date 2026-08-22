@@ -1,0 +1,86 @@
+identity:
+  name: tile_images
+  author: KouuShin
+  label:
+    en_US: Tile Images
+    zh_Hans: 图片切片
+description:
+  human:
+    en_US: Create overview JPEGs and overlapping local JPEG tiles from input images.
+    zh_Hans: 从输入图片生成 overview JPEG 与带重叠的局部 JPEG 切片。
+  llm: Split each source image into an overview and overlapping local tiles. Returns standard files, text, and json outputs.
+parameters:
+  - name: images
+    label:
+      en_US: Images
+      zh_Hans: 图片
+    human_description:
+      en_US: Source JPEG or PNG images (Array[File]); PDF files are not accepted.
+      zh_Hans: 源 JPEG 或 PNG 图片（Array[File]）；不接受 PDF。
+    llm_description: Array of JPEG or PNG image files.
+    type: files
+    form: form
+    required: true
+  - name: rows
+    label:
+      en_US: Rows
+      zh_Hans: 行数
+    human_description:
+      en_US: Number of tile rows. Default 3.
+      zh_Hans: 切片行数，默认 3。
+    llm_description: Number of tile rows, at least 1.
+    type: number
+    form: form
+    required: true
+    default: 3
+  - name: columns
+    label:
+      en_US: Columns
+      zh_Hans: 列数
+    human_description:
+      en_US: Number of tile columns. Default 3.
+      zh_Hans: 切片列数，默认 3。
+    llm_description: Number of tile columns, at least 1.
+    type: number
+    form: form
+    required: true
+    default: 3
+  - name: overlap_ratio
+    label:
+      en_US: Overlap ratio
+      zh_Hans: 重叠比例
+    human_description:
+      en_US: Expansion on each side as a fraction of the base tile size. Default 0.15.
+      zh_Hans: 每边按基础切片宽高扩展的比例，默认 0.15。
+    llm_description: Expansion on each side as a fraction of the base tile width or height; from 0 inclusive to 0.5 exclusive.
+    type: number
+    form: form
+    required: true
+    default: 0.15
+  - name: jpeg_quality
+    label:
+      en_US: JPEG quality
+      zh_Hans: JPEG 质量
+    human_description:
+      en_US: JPEG encoder quality from 1 to 100. Default 90.
+      zh_Hans: JPEG 编码质量，取值 1 至 100，默认 90。
+    llm_description: JPEG encoder quality from 1 to 100.
+    type: number
+    form: form
+    required: true
+    default: 90
+  - name: include_overview
+    label:
+      en_US: Include overview
+      zh_Hans: 包含整页 overview
+    human_description:
+      en_US: Emit one full-page overview JPEG before the tiles for each input page. Default true.
+      zh_Hans: 每个输入页面在切片前输出一张整页 overview JPEG，默认 true。
+    llm_description: Whether to emit a full-page overview before each page's tiles.
+    type: boolean
+    form: form
+    required: true
+    default: true
+extra:
+  python:
+    source: tools/tile_images.py
