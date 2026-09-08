@@ -1,6 +1,6 @@
 identity:
   name: tile_images
-  author: KouuShin
+  author: kouushin
   label:
     en_US: Tile Images
     zh_Hans: 图片切片
@@ -84,3 +84,4 @@ parameters:
 extra:
   python:
     source: tools/tile_images.py
+
