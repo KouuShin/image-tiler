@@ -1,6 +1,6 @@
-version: 0.0.3
+version: 0.0.4
 type: plugin
-author: KouuShin
+author: kouushin
 name: image-tiler
 repo: https://github.com/KouuShin/image-tiler
 label:
@@ -20,7 +20,7 @@ plugins:
   tools:
     - provider/image_tiler.yaml
 meta:
-  version: 0.0.3
+  version: 0.0.1
   arch:
     - amd64
     - arm64
